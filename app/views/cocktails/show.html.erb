@@ -1,0 +1,17 @@
+<div class='container mt-2' style='list-style-type:none'>
+  <h1><%= @cocktail.name.capitalize %></h1>
+    <li><img class="img thumbnail" src="https://source.unsplash.com/739x250/?cocktail, <%= @cocktail.name %>" alt=“Responsive image" ></li>
+      <br>
+      <li class="text-muted" > Ingredients: </li>
+        <% @cocktail.doses.each do |dose| %>
+          <li class="text-muted font-weight-light">- <%= dose.ingredient.name.capitalize %> , <%= dose.description %></li>
+        <% end %>
+          <br>
+          <button type="button" class="btn btn-secondary">
+            <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: 'text-white'%>
+          </button>
+          <button type="button" class="btn btn-secondary">
+            <%= link_to 'All Cocktails', cocktails_path, class: 'text-white'%>
+          </button>
+</div>
+

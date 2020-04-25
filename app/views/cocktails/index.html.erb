@@ -1,0 +1,19 @@
+<div class="container mt-2">
+  <title>Cocktails</title>
+    <h1> Cocktails List </h1>
+    <br>
+      <div class='card-columns' display ='inline-block'>
+        <% @cocktails.each do |cocktail| %>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://source.unsplash.com/286x190/?cocktail, <%= cocktail.name %>" alt=“Card image”>
+            <div class="card-body">
+              <h5 class="card-title"><%=cocktail.name%></h5>
+              <button class="small-btn btn-secondary"><%= link_to 'Check it out', cocktail, class:"text-white" %></button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+</div>
+
+
+
